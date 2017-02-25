@@ -1,0 +1,19 @@
+{
+  "name": "RevStackCore.IO.Pdf",
+  "version": "1.0.0",
+  "description": "Html to Pdf implementation of RevStackCore.IO",
+  "main": "RevStackCore.IO.Pdf.sln",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RevStackCore/IO.Pdf.git"
+  },
+  "author": "S. Francis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RevStackCore/IO.Pdf/issues"
+  },
+  "homepage": "https://github.com/RevStackCore/IO.Pdf"
+}
