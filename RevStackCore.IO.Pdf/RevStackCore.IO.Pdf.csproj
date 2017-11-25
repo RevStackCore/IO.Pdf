@@ -1,13 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
 	<PackageId>RevStackCore.IO.Pdf</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
     <Authors>S. Francis</Authors>
     <Description>Html to Pdf implementation of RevStackCore.IO</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Net Standard 1.5 release</PackageReleaseNotes>
+    <PackageReleaseNotes>Net Standard 2.0 release</PackageReleaseNotes>
     <Copyright>Copyright 2017</Copyright>
     <PackageTags>RevStackCore IO Pdf Html</PackageTags>		
   </PropertyGroup>
@@ -19,17 +19,12 @@
     <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="RevStackCore.IO">
-      <Version>1.0.3</Version>
+    <PackageReference Include="RevStackCore.IO" Version="1.0.3">
     </PackageReference>
-    <PackageReference Include="System.Diagnostics.Process">
-      <Version>4.3.0</Version>
+    <PackageReference Include="System.Diagnostics.Process" Version="4.3.0">
     </PackageReference>
-    <PackageReference Include="System.Threading.Thread">
-      <Version>4.3.0</Version>
+    <PackageReference Include="System.Threading.Thread" Version="4.3.0">
     </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions">
-      <Version>1.1.0</Version>
-    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.0.1" />
   </ItemGroup>
 </Project>
