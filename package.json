@@ -1,6 +1,6 @@
 {
   "name": "RevStackCore.IO.Pdf",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Html to Pdf implementation of RevStackCore.IO",
   "main": "RevStackCore.IO.Pdf.sln",
   "scripts": {

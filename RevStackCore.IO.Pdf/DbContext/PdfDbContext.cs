@@ -169,7 +169,8 @@ namespace RevStackCore.IO.Pdf
 			
 			return new FileEntity
 			{
-				Content = bytes
+				Content = bytes,
+                Path=filePath
 			};
 		}
 

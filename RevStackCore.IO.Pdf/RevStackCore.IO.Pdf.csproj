@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
 	<PackageId>RevStackCore.IO.Pdf</PackageId>
-    <PackageVersion>2.0.1</PackageVersion>
+    <PackageVersion>2.0.2</PackageVersion>
     <Authors>S. Francis</Authors>
     <Description>Html to Pdf implementation of RevStackCore.IO</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
