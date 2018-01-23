@@ -12,12 +12,14 @@ namespace RevStackCore.IO.Pdf
 		private string _filePath;
 		private string _rasterizeScriptPath;
 		private bool _debug;
+        private bool _deleteFile;
 		public PdfDbContext(string executablePath)
 		{
 			_executablePath = executablePath;
 			_filePath = Path.Combine(_executablePath, "pdfs");
 			_rasterizeScriptPath = RASTERIZEJS;
 			_debug = false;
+            _deleteFile = true;
 		}
 
 		public PdfDbContext(string executablePath, bool debug)
@@ -26,7 +28,17 @@ namespace RevStackCore.IO.Pdf
 			_filePath = Path.Combine(_executablePath, "pdfs");
 			_rasterizeScriptPath = RASTERIZEJS;
 			_debug = debug;
+            _deleteFile = true;
 		}
+
+        public PdfDbContext(string executablePath, bool debug, bool deleteFile)
+        {
+            _executablePath = executablePath;
+            _filePath = Path.Combine(_executablePath, "pdfs");
+            _rasterizeScriptPath = RASTERIZEJS;
+            _debug = debug;
+            _deleteFile = deleteFile;
+        }
 
 		public PdfDbContext(string executablePath, string filePath)
 		{
@@ -34,14 +46,16 @@ namespace RevStackCore.IO.Pdf
 			_filePath = filePath;
 			_rasterizeScriptPath = RASTERIZEJS;
 			_debug = false;
+            _deleteFile = true;
 		}
 
-		public PdfDbContext(string executablePath, string filePath, bool debug)
+		public PdfDbContext(string executablePath, string filePath, bool debug, bool deleteFile)
 		{
 			_executablePath = executablePath;
 			_filePath = filePath;
 			_rasterizeScriptPath = RASTERIZEJS;
 			_debug = debug;
+            _deleteFile = deleteFile;
 		}
 
 		public PdfDbContext(string executablePath, string filePath, string rasterizeScriptPath)
@@ -50,6 +64,7 @@ namespace RevStackCore.IO.Pdf
 			_filePath = filePath;
 			_rasterizeScriptPath = Path.Combine(rasterizeScriptPath, RASTERIZEJS);
 			_debug = false;
+            _deleteFile = true;
 		}
 
 		public PdfDbContext(string executablePath, string filePath, string rasterizeScriptPath, bool debug)
@@ -58,7 +73,17 @@ namespace RevStackCore.IO.Pdf
 			_filePath = filePath;
 			_rasterizeScriptPath = Path.Combine(rasterizeScriptPath, RASTERIZEJS);
 			_debug = debug;
+            _deleteFile = true;
 		}
+
+        public PdfDbContext(string executablePath, string filePath, string rasterizeScriptPath, bool debug, bool deleteFile)
+        {
+            _executablePath = executablePath;
+            _filePath = filePath;
+            _rasterizeScriptPath = Path.Combine(rasterizeScriptPath, RASTERIZEJS);
+            _debug = debug;
+            _deleteFile = deleteFile;
+        }
 
 		public string GeneratePdf(string url)
 		{
@@ -137,7 +162,11 @@ namespace RevStackCore.IO.Pdf
 				}
 			}
 
-			File.Delete(filePath);//delete the document on disk before returning
+            if(_deleteFile)
+            {
+                File.Delete(filePath);//delete the document on disk before returning
+            }
+			
 			return new FileEntity
 			{
 				Content = bytes
